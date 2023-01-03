@@ -1,0 +1,30 @@
+@import "var";
+
+
+
+
+button {
+    width: fit-content;
+    padding: $spacing-md;
+    border-radius: $round-xs;
+    border: none;
+    transition: $transition-fast;
+    cursor: $cursor-pointer;
+    opacity: .95;
+    transform: scale(1);
+
+    &:hover {
+        opacity: 1;
+        transform: scale(1.03)
+    }
+
+    &.btn-primary {
+        background-color: $color-light-grey;
+        color: $color-text;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+
+    
+}

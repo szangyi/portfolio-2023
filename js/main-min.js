@@ -1,0 +1,1 @@
+document.getElementById("menu-toggle").addEventListener("click",(function(){console.log("toggle"),document.body.classList.toggle("nav-open")}));

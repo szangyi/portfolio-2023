@@ -1,0 +1,32 @@
+@import "var";
+@import "menu";
+@import "layout";
+@import "nav";
+@import "card";
+@import "button";
+@import "banner";
+
+body {
+    font-family: $font-main;
+    cursor: $cursor-normal;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit;
+    cursor: $cursor-pointer;
+    height: 100%;
+}

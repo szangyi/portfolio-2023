@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+.menu-container {
+  position: fixed;
+  right: 0;
+  top: 50%;
+}
+
+.menu-toggle {
+  position: absolute;
+  right: 1.5rem;
+  top: 49%;
+  transform: translate(0, -50%);
+  height: 26px;
+  width: 29px;
+  cursor: url(/assets/lego-cursor-mini-pointer.png), auto;
+}
+.menu-toggle, .menu-toggle:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.menu-toggle-bar {
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #006CB7;
+  transition: all 0.3s ease;
+}
+.menu-toggle-bar.menu-toggle-bar--top {
+  transform: translate(0, -8px);
+}
+.menu-toggle-bar.menu-toggle-bar--bottom {
+  transform: translate(0, 8px);
+}
+.nav-open .menu-toggle-bar.menu-toggle-bar--top {
+  transform: translate(0, 0) rotate(45deg);
+}
+.nav-open .menu-toggle-bar.menu-toggle-bar--middle {
+  opacity: 0;
+}
+.nav-open .menu-toggle-bar.menu-toggle-bar--bottom {
+  transform: translate(0, 0) rotate(-45deg);
+}
+
+.sidebar-container {
+  background-color: turquoise;
+  width: 20vw;
+  height: 100%;
+  position: fixed;
+  padding: 2rem;
+  top: 0;
+  right: -20vw;
+  transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.5s all;
+}
+
+.menu-toggle {
+  transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.5s all;
+}
+
+body {
+  background-color: #D01011;
+  margin-left: 0;
+  transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.5s all;
+}
+body.nav-open {
+  margin-left: -20vw;
+}
+body.nav-open .sidebar-container {
+  right: 0;
+}
+body.nav-open .menu-toggle {
+  right: 20vw;
+}
+body main {
+  background-color: #FFFFFF;
+  height: 100vh;
+}
+
+.nav-container {
+  background-color: #FECF00;
+  height: 50px;
+}
+.nav-container nav {
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 6rem;
+}
+.nav-container nav img {
+  height: 100%;
+  position: absolute;
+  left: 6rem;
+  right: 0;
+  max-height: 22px;
+}
+.nav-container nav ul {
+  width: 30vw;
+  display: flex;
+  justify-content: space-around;
+}
+.nav-container nav ul li {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 800;
+  transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.5s all;
+  transform: scale(1);
+  transform-origin: center;
+}
+.nav-container nav ul li:hover {
+  transform: scale(1.07);
+}
+
+.card {
+  transform: translate(0%, 0%);
+  width: 280px;
+  height: 280px;
+  transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.8s all;
+  cursor: url(/assets/lego-cursor-mini-pointer.png), auto;
+}
+.card .front {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: perspective(1000px) rotateY(0deg);
+  transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.8s all;
+}
+.card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: perspective(1000px) rotateY(-180deg);
+  transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.8s all;
+}
+.card.flipped .front {
+  transform: perspective(1000px) rotateY(180deg);
+}
+.card.flipped .back {
+  transform: perspective(1000px) rotateY(0);
+}
+.card img {
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 13px;
+  border: none;
+  transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.5s all;
+  cursor: url(/assets/lego-cursor-mini-pointer.png), auto;
+  opacity: 0.95;
+  transform: scale(1);
+}
+button:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+button.btn-primary {
+  background-color: #F5F5F5;
+  color: #1C1C1C;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.banner {
+  background-image: url(/assets/banner-bg.png);
+  background-size: cover;
+  height: fit-content;
+  min-height: 80vh;
+  padding: 2rem 6rem;
+}
+.banner .banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.banner .img-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.banner .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #FFFFFF;
+}
+.banner .text-container p {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.banner .text-container h1 {
+  font-weight: 300;
+  font-size: 2.3rem;
+}
+.banner .button-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.banner .button-container button {
+  margin: 3rem 0 0.3rem;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  cursor: url(/assets/lego-cursor-mini-green.png), auto;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+  cursor: url(/assets/lego-cursor-mini-pointer.png), auto;
+  height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,93 @@
+// *********************
+// FONT
+// *********************
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+$font-main: "Open Sans", sans-serif;
+
+// FONT WEIGHT
+$font-400: 400;
+$font-500: 500;
+$font-600: 600;
+$font-700: 700;
+$font-800: 800;
+
+// *********************
+// COLOR
+// *********************
+$color-black: #111111;
+$color-white: #FFFFFF;
+$color-text: #1C1C1C;
+$color-light-grey: #F5F5F5;
+$color-red: #D01011;
+$color-yellow: #FECF00;
+$color-orange: #F57D20;
+$color-green: #00AF4C;
+$color-blue: #006CB7;
+$color-message: #6DE35D;
+$color-message-alt: $color-light-grey;
+
+
+
+// *********************
+// SPACING
+// *********************
+$spacing-xs: 0.3rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+$spacing-xxxl: 6rem;
+
+// *********************
+// WIDTH
+// *********************
+$width-full: 100%;
+$width-half: 50%;
+$width-xs: 20%;
+$width-sm: 45%;
+$width-md: 70%;
+$width-lg: 80%;
+
+
+// *********************
+// RADIUS
+// *********************
+$round-full: 50%;
+$round-lg: 50px;
+$round-md: 20px;
+$round-xs: 13px;
+
+// *********************
+// IMAGE LAYOUT
+// *********************
+$card_width: 250px;
+$gap: 20px;
+$card_border_radius: 16px;
+$card_small: 26;
+$card_med: 33;
+$card_large: 45;
+
+// *********************
+// BREAKPOINTS
+// *********************
+$breakPoints: (
+    sm: 320px,
+    md: 480px,
+    lg: 768px,
+    xl: 1032px,
+    xxl: 1370px,
+);
+
+// *********************
+// TRANSITIONS
+// *********************
+$transition-fast: cubic-bezier(0.69,-0.41,0.27,1.4) .5s all;
+$transition-slow: cubic-bezier(0.69,-0.41,0.27,1.4) .8s all;
+
+
+// *********************
+// CURSORS
+// *********************
+$cursor-normal: url(/assets/lego-cursor-mini-green.png), auto;
+$cursor-pointer: url(/assets/lego-cursor-mini-pointer.png), auto;
