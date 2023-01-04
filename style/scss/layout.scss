@@ -1,30 +1,11 @@
 @import "var";
 
-
-
 body {
-
     background-color: $color-red;
     margin-left: 0;
-    transition: $transition-fast;
-
-    &.nav-open {
-        margin-left:-20vw;
-
-        .sidebar-container {
-            right:0;
-        }
-
-        .menu-toggle{
-            right: 20vw;
-        }
-
-    }
 
     main {
         background-color: $color-white;
-        height: 100vh; 
+        height: 100vh;
     }
 }
-
-

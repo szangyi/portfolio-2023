@@ -5,10 +5,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 .menu-container {
   position: fixed;
   right: 0;
   top: 50%;
+  z-index: 1000;
 }
 
 .menu-toggle {
@@ -29,11 +32,11 @@
   position: absolute;
   top: 50%;
   margin-top: -1px;
-  right: 0;
+  right: 20px;
   width: 100%;
   height: 4px;
   border-radius: 4px;
-  background-color: #006CB7;
+  background-color: #0755BF;
   transition: all 0.3s ease;
 }
 .menu-toggle-bar.menu-toggle-bar--top {
@@ -52,14 +55,22 @@
   transform: translate(0, 0) rotate(-45deg);
 }
 
+body.nav-open .sidebar-container {
+  right: 0;
+}
+body.nav-open .menu-toggle {
+  right: 30vw;
+}
+
 .sidebar-container {
-  background-color: turquoise;
-  width: 20vw;
+  background-color: #0755BF;
+  color: #FFFFFF;
+  width: 30vw;
   height: 100%;
   position: fixed;
-  padding: 2rem;
+  padding: 6rem 3rem;
   top: 0;
-  right: -20vw;
+  right: -30vw;
   transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.5s all;
 }
 
@@ -70,16 +81,6 @@
 body {
   background-color: #D01011;
   margin-left: 0;
-  transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.5s all;
-}
-body.nav-open {
-  margin-left: -20vw;
-}
-body.nav-open .sidebar-container {
-  right: 0;
-}
-body.nav-open .menu-toggle {
-  right: 20vw;
 }
 body main {
   background-color: #FFFFFF;
@@ -106,20 +107,74 @@ body main {
   max-height: 22px;
 }
 .nav-container nav ul {
-  width: 30vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+  gap: 4rem;
 }
 .nav-container nav ul li {
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 800;
   transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.5s all;
-  transform: scale(1);
-  transform-origin: center;
 }
-.nav-container nav ul li:hover {
-  transform: scale(1.07);
+.nav-container nav ul a {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #16151b;
+  margin: 0 15px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  animation: show 0.2s 1.5s ease 1 both;
+}
+.nav-container nav ul a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #16151b;
+  top: 47%;
+  animation: out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+.nav-container nav ul a:hover:before {
+  animation: in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+@keyframes in {
+  0% {
+    width: 0;
+    left: 0;
+    right: auto;
+  }
+  100% {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+@keyframes out {
+  0% {
+    width: 100%;
+    left: auto;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    left: auto;
+    right: 0;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .card {
@@ -202,6 +257,18 @@ button.btn-primary {
   justify-content: center;
   color: #FFFFFF;
 }
+.banner .text-container .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+.banner .text-container .letter {
+  display: inline-block;
+  line-height: 1em;
+}
 .banner .text-container p {
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -222,6 +289,132 @@ button.btn-primary {
   margin: 3rem 0 0.3rem;
 }
 
+main {
+  height: 5000vh;
+  padding: 3rem 6rem;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+}
+
+.message-indicator {
+  display: grid;
+}
+.message-indicator .section-container {
+  grid-column: 1;
+  grid-row: 1;
+}
+.message-indicator .img-container {
+  grid-column: 1;
+  grid-row: 1;
+}
+.message-indicator .img-container img {
+  width: 60px;
+  height: 60px;
+}
+.message-indicator .typing-indicator {
+  background-color: #F5F5F5;
+  will-change: transform;
+  width: fit-content;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  animation: 2s bulge infinite ease-out;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+}
+.message-indicator .typing-indicator.disable {
+  animation: 0.3s disable ease-out forwards;
+}
+.message-indicator .typing-indicator span {
+  height: 10px;
+  width: 10px;
+  float: left;
+  margin: 0 1px;
+  background-color: #9e9ea1;
+  display: block;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+.message-indicator .typing-indicator span:nth-of-type(1) {
+  animation: 1s blink infinite 0.3333s;
+}
+.message-indicator .typing-indicator span:nth-of-type(2) {
+  animation: 1s blink infinite 0.6666s;
+}
+.message-indicator .typing-indicator span:nth-of-type(3) {
+  animation: 1s blink infinite 0.9999s;
+}
+.message-indicator.m-left .img-container {
+  margin-left: -70px;
+}
+.message-indicator.m-left .message {
+  transform-origin: 0% 100%;
+}
+.message-indicator.m-left .message:after {
+  left: -5px;
+}
+.message-indicator.m-right {
+  align-self: flex-end;
+  text-align: right;
+}
+.message-indicator.m-right .img-container {
+  margin-right: -70px;
+}
+.message-indicator.m-right .typing-indicator {
+  justify-self: flex-end;
+}
+.message-indicator.m-right .message {
+  transform-origin: 100% 100%;
+}
+.message-indicator.m-right .message:after {
+  right: -5px;
+}
+
+.message {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #F5F5F5;
+  width: fit-content;
+  height: fit-content;
+  text-align: left;
+  border-radius: 20px;
+  transform: scale(0);
+}
+.message .message-content {
+  padding: 0;
+  margin: 0;
+}
+.message:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 15px solid #F5F5F5;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  bottom: 0;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes disable {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 body {
   font-family: "Open Sans", sans-serif;
   cursor: url(/assets/lego-cursor-mini-green.png), auto;
