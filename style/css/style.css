@@ -7,6 +7,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 .menu-container {
   position: fixed;
   right: 0;
@@ -177,14 +180,14 @@ body main {
   }
 }
 
-.card {
+.banner-container .card {
   transform: translate(0%, 0%);
   width: 280px;
   height: 280px;
   transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.8s all;
   cursor: url(/assets/lego-cursor-mini-pointer.png), auto;
 }
-.card .front {
+.banner-container .card .front {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -192,7 +195,7 @@ body main {
   transform: perspective(1000px) rotateY(0deg);
   transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.8s all;
 }
-.card .back {
+.banner-container .card .back {
   position: absolute;
   top: 0;
   left: 0;
@@ -202,13 +205,13 @@ body main {
   transform: perspective(1000px) rotateY(-180deg);
   transition: cubic-bezier(0.69, -0.41, 0.27, 1.4) 0.8s all;
 }
-.card.flipped .front {
+.banner-container .card.flipped .front {
   transform: perspective(1000px) rotateY(180deg);
 }
-.card.flipped .back {
+.banner-container .card.flipped .back {
   transform: perspective(1000px) rotateY(0);
 }
-.card img {
+.banner-container .card img {
   height: 100%;
   width: 100%;
 }
@@ -275,10 +278,6 @@ button.btn-primary {
   font-size: 1.2rem;
   font-weight: 700;
 }
-.banner .text-container h1 {
-  font-weight: 300;
-  font-size: 2.3rem;
-}
 .banner .button-container {
   display: flex;
   flex-direction: column;
@@ -289,14 +288,10 @@ button.btn-primary {
   margin: 3rem 0 0.3rem;
 }
 
-main {
-  padding: 3rem 10rem;
-}
-
 .message-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
+  padding: 3rem 10rem;
 }
 
 .message-indicator {
@@ -426,6 +421,275 @@ main {
     transform: scale(0);
   }
 }
+.project-container {
+  background-color: #111111;
+  padding: 10rem 3rem;
+  margin-top: 10rem;
+}
+.project-container h1 {
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.project-container .cards {
+  padding: 15px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.project-container .card {
+  margin: 15px;
+  width: calc(33.3333333333% - 30px);
+  color: #FFFFFF;
+  transition: all 0.2s ease-in-out;
+  text-align: left;
+}
+@media screen and (max-width: 991px) {
+  .project-container .card {
+    width: calc(50% - 30px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .project-container .card {
+    width: 100%;
+  }
+}
+.project-container .card:hover .card__inner {
+  background-color: black;
+  border-radius: 13px;
+  transform: scale(1.05);
+}
+.project-container .card .tag {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.7rem;
+  color: #00AF4C;
+  margin-bottom: 0.3rem;
+}
+.project-container .card h5 {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+.project-container .card .desc {
+  font-size: 0.9rem;
+  opacity: 0.5;
+  margin-top: 1.5rem;
+}
+.project-container .card__inner {
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  cursor: url(/assets/lego-cursor-mini-pointer.png), auto;
+  background-color: black;
+  border-radius: 13px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease-in-out;
+}
+.project-container .card__inner:after {
+  transition: all 0.3s ease-in-out;
+}
+.project-container .card__expander {
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  border-radius: 13px;
+  color: #1C1C1C;
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 2rem;
+  text-align: left;
+}
+.project-container .card__expander .fas {
+  font-size: 0.75em;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: url(/assets/lego-cursor-mini-pointer.png), auto;
+}
+.project-container .card__expander .fas:hover {
+  opacity: 0.9;
+}
+.project-container .card.is-collapsed .card__inner:after {
+  content: "";
+  opacity: 0;
+}
+.project-container .card.is-collapsed .card__expander {
+  max-height: 0;
+  min-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  opacity: 0;
+}
+.project-container .card.is-expanded .card__inner {
+  background-color: #D01011;
+}
+.project-container .card.is-expanded .card__inner:after {
+  content: "";
+  opacity: 1;
+  display: block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  bottom: -30px;
+  left: calc(50% - 15px);
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid white;
+}
+.project-container .card.is-expanded .card__inner .fa:before {
+  content: "\f115";
+}
+.project-container .card.is-expanded .card__expander {
+  max-height: 1000px;
+  min-height: 200px;
+  overflow: visible;
+  margin-top: 30px;
+  opacity: 1;
+}
+.project-container .card.is-expanded:hover .card__inner {
+  transform: scale(1);
+}
+.project-container .card.is-inactive .card__inner {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.project-container .card.is-inactive:hover .card__inner {
+  background-color: orange;
+  transform: scale(1);
+}
+@media screen and (min-width: 992px) {
+  .project-container .card:nth-of-type(3n + 2) .card__expander {
+    margin-left: calc(-100% - 30px);
+  }
+  .project-container .card:nth-of-type(3n + 3) .card__expander {
+    margin-left: calc(-200% - 60px);
+  }
+  .project-container .card:nth-of-type(3n + 4) {
+    clear: left;
+  }
+  .project-container .card__expander {
+    width: calc(300% + 60px);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .project-container .card:nth-of-type(2n + 2) .card__expander {
+    margin-left: calc(-100% - 30px);
+  }
+  .project-container .card:nth-of-type(2n + 3) {
+    clear: left;
+  }
+  .project-container .card__expander {
+    width: calc(200% + 30px);
+  }
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 2.3rem;
+}
+
+section.slide-option {
+  background-color: white;
+  margin: 0 0 50px 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+section.slide-option .no-marg {
+  margin: 0 0 0 0;
+}
+section.slide-option div.container {
+  transition: all 0.3s ease;
+}
+section.slide-option div.container h1 {
+  margin: 15px 0 0 0;
+}
+section.slide-option div.container h3 {
+  margin: 0 0 25px 0;
+}
+@media (max-width: 992px) {
+  section.slide-option {
+    padding: 0 20px 0 20px;
+  }
+}
+section.slide-option div.highway-slider {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+}
+section.slide-option div.highway-slider div.highway-barrier {
+  overflow: hidden;
+  position: relative;
+}
+section.slide-option div.highway-slider ul.highway-lane {
+  display: flex;
+  height: 100%;
+}
+section.slide-option div.highway-slider ul.highway-lane li.highway-car {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: #343434;
+}
+@keyframes translatestf {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(-300%);
+  }
+  0% {
+    transform: translateX(100%);
+  }
+}
+section.slide-option #stffull div.highway-barrier ul.highway-lane {
+  width: 500%;
+}
+section.slide-option #stffull div.highway-barrier ul.highway-lane li.highway-car {
+  animation: translatestf 50s linear infinite;
+}
+section.slide-option #stffull div.highway-barrier ul.highway-lane li.highway-car h4 {
+  font-size: 28px;
+}
+@keyframes translateinfinite {
+  100% {
+    transform: translateX(-2160px);
+  }
+}
+section.slide-option #infinite div.highway-barrier {
+  background: #fff;
+  box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 0.3);
+}
+section.slide-option #infinite div.highway-barrier::before, section.slide-option #infinite div.highway-barrier::after {
+  content: " ";
+  position: absolute;
+  z-index: 9;
+  width: 180px;
+  height: 100%;
+}
+section.slide-option #infinite div.highway-barrier::before {
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+section.slide-option #infinite div.highway-barrier::after {
+  top: 0;
+  right: 0;
+  background: linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+section.slide-option #infinite div.highway-barrier ul.highway-lane {
+  width: 4320px;
+}
+section.slide-option #infinite div.highway-barrier ul.highway-lane li.highway-car {
+  width: 180px;
+  animation: translateinfinite 55s linear infinite;
+}
+section.slide-option #infinite div.highway-barrier ul.highway-lane li.highway-car span.fab {
+  font-size: 65px;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   cursor: url(/assets/lego-cursor-mini-green.png), auto;
