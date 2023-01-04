@@ -9,9 +9,9 @@ const tl1 = gsap.timeline({
     scrollTrigger: {
         trigger: "#trigger",
         start: "center top",
-        onEnter() {
-            document.querySelector("#m-1 .typing-indicator").classList.add('disable');
-        },
+        // onEnter() {
+        //     document.querySelector("#m-1 .typing-indicator").classList.add('disable');
+        // },
     },
     paused: true,
     defaults: {
@@ -27,6 +27,11 @@ tl1.to(
     "=0"
 );
 tl1.to(
+    m1.children[1], {},
+    "=0"
+);
+
+tl1.to(
     m1.querySelector('.section-container').children[0], {}, 
 	"=0"
 );
@@ -38,11 +43,16 @@ tl1.to(
 // message 2
 tl1.to(
     m2.children[0], {},
-    "=.8"
+    "=1"
 );
 tl1.to(
-    m2.children[0], {},
-    "=.8"
+    m2.children[1], {},
+    "=1"
+);
+
+tl1.to(
+    m2.querySelector('.section-container').children[0], {},
+    "=1.5"
 );
 
 // message 3

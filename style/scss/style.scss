@@ -27,8 +27,19 @@ ul {
 }
 
 a {
-    text-decoration: none !important;
+    text-decoration: none;
     color: inherit;
     cursor: $cursor-pointer;
     height: 100%;
+}
+
+.message {
+    a {
+        color: $color-blue;
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

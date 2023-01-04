@@ -8,6 +8,7 @@
 
 .message-indicator {
     display: grid;
+    width: 100%;
 
     .section-container {
         // position: absolute;
@@ -15,11 +16,16 @@
         // to create overlap without position absolute
         grid-column: 1;
         grid-row: 1;
+        width: 100%;
+
     }
 
     .img-container {
         grid-column: 1;
         grid-row: 1;
+        // put back
+        // transform: scale(0);
+
         img {
             width: 60px;
             height: 60px;
@@ -40,6 +46,9 @@
         grid-column: 1;
         grid-row: 1;
         align-self: start;
+
+                // put back
+        // transform: scale(0);
 
         &.disable {
             animation: 0.3s disable ease-out forwards;
@@ -69,6 +78,12 @@
 
         .message {
             transform-origin: 0% 100%;
+            background-color: $color-light-grey;
+
+            &:first-of-type:after {
+                border-bottom: 15px solid $color-light-grey;
+            }
+
             &:after {
                 left: -5px;
             }
@@ -87,8 +102,25 @@
             justify-self: flex-end;
         }
 
+        .section-container {
+            // display: flex;
+            // flex-wrap: wrap-reverse;
+            // flex-direction: column;
+            // align-content: flex-end;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
         .message {
             transform-origin: 100% 100%;
+            background-color: $color-message;
+
+            &:first-of-type:after {
+                border-bottom: 15px solid $color-message;
+            }
+
             &:after {
                 right: -5px;
             }
@@ -97,48 +129,35 @@
 }
 
 .message {
+    max-width: 60%;
     position: relative;
     margin-bottom: 10px;
 
     padding: 20px;
-    background-color: $color-light-grey;
+    // background-color: $color-light-grey;
     width: fit-content;
     height: fit-content;
     text-align: left;
     border-radius: 20px;
-    transform: scale(0);
 
-    // &.m-right {
-    //     margin-left: calc(100% - 240px);
-    //     transform-origin: 100% 100%;
-
-    //     &:after {
-    //         right: -5px;
-    //     }
-    // }
-
-    // &.m-left {
-    //     transform-origin: 0% 100%;
-
-    //     &:after {
-    //         left: -5px;
-    //     }
-    // }
+    // put back
+   //  transform: scale(0);
 
     .message-content {
         padding: 0;
         margin: 0;
     }
 
-    &:after {
+
+
+    &:first-of-type:after {
         content: "";
         position: absolute;
         width: 0;
         height: 0;
-        border-bottom: 15px solid $color-light-grey;
         border-left: 15px solid transparent;
         border-right: 15px solid transparent;
-        bottom: 0;
+        // bottom: 0;
     }
 }
 

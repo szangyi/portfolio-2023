@@ -85,6 +85,8 @@ body {
     right: -30vw;
 
     transition: $transition-fast;
+
+    z-index: 1000;
 }
 
 .menu-toggle{
