@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
 
-    padding: $spacing-xxl $spacing-extra $spacing-extra;
+    padding: $spacing-extra;
     background-image: url(/assets/chat-bg.png);
     background-repeat: repeat;
 
@@ -180,4 +180,33 @@
     100% {
         transform: scale(0);
     }
+}
+
+
+
+
+
+
+@media (max-width: map-get($breakPoints, lg)) {
+
+    .message-container {
+        padding: $spacing-extra $spacing-xxxl $spacing-extra;
+
+    }
+
+}
+
+
+@media (max-width: map-get($breakPoints, md)) {
+
+    .message-container {
+        padding: $spacing-xxl 5rem $spacing-extra;
+
+        .message {
+            // max-width: 80%;
+            max-width: 100%;
+        }
+
+    }
+
 }

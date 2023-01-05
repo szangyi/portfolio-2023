@@ -10,6 +10,7 @@
 @import "project";
 @import "font";
 @import "slide";
+@import "video";
 
 body {
     font-family: $font-main;
@@ -23,6 +24,7 @@ body {
 
 html, body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 ul {
@@ -44,5 +46,26 @@ a {
         &:hover {
             text-decoration: underline;
         }
+    }
+}
+
+
+
+@media (max-width: map-get($breakPoints, xl)) {
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display:block
+    }
+}
+
+
+@media (max-width: map-get($breakPoints, md)) {
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display:none
     }
 }

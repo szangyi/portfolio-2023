@@ -13,26 +13,28 @@ document.getElementById('flip-card').addEventListener('click', function() {
 
 
 
+if (screen.width > 768) {
+    // NAME TEXT ANIMATION
+    function moveName() {
+        var textWrapper = document.querySelector('.namep .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-// NAME TEXT ANIMATION
-function moveName() {
-    var textWrapper = document.querySelector('.namep .letters');
-    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    
-    setTimeout(() => {
-        anime.timeline({ loop: false })
-            .add({
-                targets: '.namep .letter',
-                translateY: ["1.1em", 0],
-                translateZ: 0,
-                duration: 750,
-                delay: (el, i) => 50 * i
-            })
-    }, 2000);
+        setTimeout(() => {
+            anime.timeline({ loop: false })
+                .add({
+                    targets: '.namep .letter',
+                    translateY: ["1.1em", 0],
+                    translateZ: 0,
+                    duration: 750,
+                    delay: (el, i) => 50 * i
+                })
+        }, 2000);
+    }
+
+    moveName();
+    setInterval(moveName, 10000); // every 1 minute
+
 }
-
-moveName(); 
-setInterval(moveName, 10000);  // every 1 minute
 
 
 
@@ -43,33 +45,41 @@ var $cell = $('.card');
 //open and close card when clicked on card
 $cell.find('.js-expander').click(function() {
 
-  var $thisCell = $(this).closest('.card');
+    var $thisCell = $(this).closest('.card');
 
-  if ($thisCell.hasClass('is-collapsed')) {
-    $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
-    $thisCell.removeClass('is-collapsed').addClass('is-expanded');
-    
-    if ($cell.not($thisCell).hasClass('is-inactive')) {
-      //do nothing
+    if ($thisCell.hasClass('is-collapsed')) {
+        $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+        $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+
+        if ($cell.not($thisCell).hasClass('is-inactive')) {
+            //do nothing
+        } else {
+            $cell.not($thisCell).addClass('is-inactive');
+        }
+
     } else {
-      $cell.not($thisCell).addClass('is-inactive');
+        $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+        $cell.not($thisCell).removeClass('is-inactive');
     }
-
-  } else {
-    $thisCell.removeClass('is-expanded').addClass('is-collapsed');
-    $cell.not($thisCell).removeClass('is-inactive');
-  }
 });
 
 //close card when click on cross
 $cell.find('.js-collapser').click(function() {
 
-  var $thisCell = $(this).closest('.card');
+    var $thisCell = $(this).closest('.card');
 
-  $thisCell.removeClass('is-expanded').addClass('is-collapsed');
-  $cell.not($thisCell).removeClass('is-inactive');
+    $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+    $cell.not($thisCell).removeClass('is-inactive');
 
 });
+
+
+if (document.querySelector('.front p').classList.contains('pulse') ) {
+    document.querySelector('.front').addEventListener("click", function() {
+        // document.querySelector('.front').classList.remove("shake")
+        document.querySelector('.front p').classList.remove("pulse")
+    })
+}
 
 
 
@@ -83,3 +93,5 @@ $cell.find('.js-collapser').click(function() {
 
 
 // }
+
+

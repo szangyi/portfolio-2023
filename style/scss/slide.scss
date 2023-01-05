@@ -3,7 +3,7 @@
 section.slide-option {
     background-color: white; 
     
-    margin: 0 0 50px 0;
+    // margin: 0 0 50px 0;
     .no-marg {
         margin: 0 0 0 0;
     }
@@ -21,7 +21,7 @@ section.slide-option {
         }
     }
     @media (max-width: 992px) {
-        padding: 0 20px 0 20px;
+        // padding: 0 20px 0 20px;
     }
 
     div.highway-slider {
@@ -99,11 +99,24 @@ section.slide-option {
         }
         ul.highway-lane {
             width: calc(180px * 24);
+            @media (max-width: map-get($breakPoints, md)) {
+                width: calc(180px * 12);
+            }
+
             li.highway-car {
                 width: 180px;
                 animation: translateinfinite 55s linear infinite;
                 span.fab {
                     font-size: 65px;
+                }
+
+                .fa-tailwind {
+                    height: 50%;
+                    width: auto;
+                    img {
+height: 100%;
+                    }
+                 
                 }
             }
         }

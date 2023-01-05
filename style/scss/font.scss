@@ -5,6 +5,10 @@ h1 {
     font-size: 2.3rem;
 }
 
+h2 {
+    margin-bottom: $spacing-xl;
+}
+
 h5 {
     font-weight: 300;
     font-size: 1.5rem;
@@ -14,4 +18,9 @@ h6 {
     font-weight: 500;
     font-size: 1.2rem;
     margin-bottom: $spacing-xs;
+}
+
+
+.text-r {
+    color: $color-red;
 }

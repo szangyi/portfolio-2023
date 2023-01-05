@@ -33,6 +33,10 @@
         padding: 15px;
         display: flex;
         flex-flow: row wrap;
+
+        @media (max-width: map-get($breakPoints, lg)) {
+            padding: 0;
+        }
     }
 
     //Cards
@@ -69,7 +73,7 @@
         //     &__inner {
         //         border-top: 2px solid $color-green;
         //     }
-            
+
         //     &__expander {
         //         border-top: none;
         //     }
@@ -91,7 +95,7 @@
         //     &__inner {
         //         border-top: 2px solid $color-orange;
         //     }
-            
+
         //     &__expander {
         //         border-top: none;
         //     }
@@ -113,7 +117,7 @@
         //     &__inner {
         //         border-top: 2px solid $color-yellow;
         //     }
-            
+
         //     &__expander {
         //         border-top: none;
         //     }
@@ -135,7 +139,7 @@
         //     &__inner {
         //         border-top: 2px solid $color-blue;
         //     }
-            
+
         //     &__expander {
         //         border-top: none;
         //     }
@@ -188,7 +192,7 @@
         &__expander {
             transition: all 0.2s ease-in-out;
             background-color: white;
-            border-radius: $round-xs ;
+            border-radius: $round-xs;
             // border-top: 2px solid var(--color);
 
             color: $color-text;
@@ -219,6 +223,11 @@
                 grid-template-columns: 1fr 1fr;
                 gap: $spacing-md;
 
+                @media (max-width: map-get($breakPoints, lg)) {
+                    display: flex;
+                    flex-direction: column;
+                }
+
                 img {
                     width: 100%;
                 }
@@ -233,7 +242,7 @@
                     margin-bottom: $spacing-md;
 
                     img {
-                        width:20px;
+                        width: 20px;
                         height: auto;
                         margin-right: $spacing-xs;
                     }

@@ -1,51 +1,72 @@
 @import "var";
 
-
 .banner-container {
-.card {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // margin-top: 50%;
-    // margin-left: 50%;
-    transform: translate(-0%, -0%);
-    width: 280px;
-    height: 280px;
-    transition: $transition-slow;
-    cursor: $cursor-pointer;
-
-    .front {
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        transform: perspective(1000px) rotateY(0deg);
+    .card {
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // margin-top: 50%;
+        // margin-left: 50%;
+        transform: translate(-0%, -0%);
+        width: 340px;
+        height: 340px;
         transition: $transition-slow;
-    }
+        cursor: $cursor-pointer;
 
-    .back {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        transform: perspective(1000px) rotateY(-180deg);
-        transition: $transition-slow;
-    }
-
-    &.flipped {
         .front {
-            transform: perspective(1000px) rotateY(180deg);
-        }
-        .back {
-            transform: perspective(1000px) rotateY(0);
-        }
-    }
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transform: perspective(1000px) rotateY(0deg);
+            transition: $transition-slow;
 
-    img {
-        height: 100%;
-        width: 100%;
+            p {
+                position: absolute;
+                top: 80%;
+                left: 38%;
+                color: $color-white;
+                opacity: 0;
+
+                &.pulse {
+                    animation: pulse 2s infinite;
+                }
+
+                @media (max-width: map-get($breakPoints, lg)) {
+                    font-size: 0.6rem;
+                }
+            }
+
+            @keyframes pulse {
+                50% {
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transform: perspective(1000px) rotateY(-180deg);
+            transition: $transition-slow;
+        }
+
+        &.flipped {
+            .front {
+                transform: perspective(1000px) rotateY(180deg);
+            }
+            .back {
+                transform: perspective(1000px) rotateY(0);
+            }
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
     }
-}
 }

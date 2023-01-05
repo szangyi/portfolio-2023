@@ -1,7 +1,5 @@
 @import "var";
 
-
-
 .menu-container {
     position: fixed;
     right: 0;
@@ -60,7 +58,6 @@
 
 body {
     &.nav-open {
-        
         // move the whole body when sidebar is open
         // margin-left:-20vw;
 
@@ -78,18 +75,69 @@ body {
     background-color: $color-blue;
     color: $color-white;
     width: 30vw;
-    height:100%;
-    position:fixed;
-    padding: $spacing-xxxl $spacing-xxl;
+    height: 100%;
+    position: fixed;
+    padding: $spacing-xxl $spacing-xxl;
+    border-radius: $round-md 0 0 $round-md;
     top: 0;
     right: -30vw;
-
+    display: flex;
+    align-items: center;
     transition: $transition-fast;
-
     z-index: 1000;
+
+    .sidebar {
+        h2 {
+        }
+        span {
+            display: inline-flex;
+        }
+
+        img {
+            height: 30px;
+            width: auto;
+        }
+    }
 }
 
-.menu-toggle{
+.menu-toggle {
     transition: $transition-fast;
 }
 
+.mydetails {
+    margin-top: $spacing-md;
+    font-weight: 600;
+}
+
+@media (max-width: map-get($breakPoints, lg)) {
+    body {
+        .sidebar-container {
+            width: 50vw;
+            right: -50vw;
+        }
+
+        &.nav-open .menu-toggle {
+            right: 50vw;
+        }
+    }
+}
+
+@media (max-width: map-get($breakPoints, md)) {
+    body {
+        .sidebar-container {
+            width: 80vw;
+            right: -80vw;
+            padding: $spacing-xl;
+        }
+
+        .menu-container {
+            .menu-toggle {
+                right: $spacing-md;
+            }
+        }
+
+        &.nav-open .menu-toggle {
+            right: 80vw;
+        }
+    }
+}

@@ -25,6 +25,17 @@ button {
         font-weight: 600;
     }
 
+    &.video-open, &.video-close {
+        background-color: transparent;
+        cursor: $cursor-pointer;
+    }
+
 
     
+}
+
+
+.video-group__item {
+    cursor: $cursor-pointer !important;
+
 }

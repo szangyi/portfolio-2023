@@ -1,18 +1,19 @@
 @import "var";
 
-
-
 .banner {
     background-image: url(/assets/banner-bg.png);
-    background-size:cover;
+    background-size: cover;
     height: fit-content;
     min-height: 80vh;
+    display: flex;
+    align-items: center;
 
     padding: $spacing-xl $spacing-xxxl;
 
     .banner-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
     }
 
     .img-container {
@@ -21,11 +22,10 @@
         flex-direction: column;
         text-align: center;
         align-items: center;
-
     }
 
     .text-container {
-        display:flex;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         // margin-top: -50%;
@@ -38,12 +38,12 @@
             padding-right: 0.05em;
             padding-bottom: 0.1em;
             overflow: hidden;
-          }
-          
-          .letter {
+        }
+
+        .letter {
             display: inline-block;
             line-height: 1em;
-          }
+        }
 
         p {
             margin-bottom: $spacing-xl;
@@ -54,7 +54,6 @@
     }
 
     .button-container {
-       
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -65,5 +64,46 @@
         }
     }
 
- 
+    @media (max-width: map-get($breakPoints, xl)) {
+        .banner-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .img-container:last-child {
+            display: none;
+        }
+    }
+
+    @media (max-width: map-get($breakPoints, lg)) {
+        padding: $spacing-xl $spacing-xxl;
+
+        .img-container:last-child {
+            display: none;
+        }
+
+        .card {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    @media (max-width: map-get($breakPoints, md)) {
+        padding: $spacing-lg $spacing-lg;
+
+        .banner-grid {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .img-container {
+            margin-top: $spacing-xxl;
+        }
+
+        .card {
+            width: 200px;
+            height: 200px;
+
+       
+        }
+    }
 }
