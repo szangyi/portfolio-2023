@@ -4,9 +4,13 @@
     display: flex;
     flex-direction: column;
 
-    padding: $spacing-xxl $spacing-extra;
+    padding: $spacing-xxl $spacing-extra $spacing-extra;
+    background-image: url(/assets/chat-bg.png);
+    background-repeat: repeat;
 
 }
+
+
 
 .message-indicator {
     display: grid;

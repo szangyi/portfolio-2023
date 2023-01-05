@@ -21,7 +21,6 @@
     // background-color: $color-black;
     background-color: $color-black;
     padding: $spacing-extra $spacing-xxl;
-    margin-top: $spacing-extra;
 
     h1 {
         color: $color-white;
@@ -42,7 +41,7 @@
         width: calc((100% / 3) - 30px);
         color: $color-white;
         transition: all 0.2s ease-in-out;
-        text-align: left;       
+        text-align: left;
 
         //media queries for stacking cards
         @media screen and (max-width: 991px) {
@@ -53,10 +52,100 @@
             width: 100%;
         }
 
+        // diff colors
+        // &.green {
+        //     &:not(.is-expanded):hover {
+        //         .card__inner {
+        //             border-top: 2px solid $color-green;
+        //         }
+        //     }
+
+        //     .tag {
+        //         color: $color-green;
+        //     }
+
+        //     border-top: 2px solid $color-green;
+
+        //     &__inner {
+        //         border-top: 2px solid $color-green;
+        //     }
+            
+        //     &__expander {
+        //         border-top: none;
+        //     }
+        // }
+
+        // &.orange {
+        //     &:not(.is-expanded):hover {
+        //         .card__inner {
+        //             border-top: 2px solid $color-orange;
+        //         }
+        //     }
+
+        //     .tag {
+        //         color: $color-orange;
+        //     }
+
+        //     border-top: 2px solid $color-orange;
+
+        //     &__inner {
+        //         border-top: 2px solid $color-orange;
+        //     }
+            
+        //     &__expander {
+        //         border-top: none;
+        //     }
+        // }
+
+        // &.yellow {
+        //     &:not(.is-expanded):hover {
+        //         .card__inner {
+        //             border-top: 2px solid $color-yellow;
+        //         }
+        //     }
+
+        //     .tag {
+        //         color: $color-yellow;
+        //     }
+
+        //     border-top: 2px solid $color-yellow;
+
+        //     &__inner {
+        //         border-top: 2px solid $color-yellow;
+        //     }
+            
+        //     &__expander {
+        //         border-top: none;
+        //     }
+        // }
+
+        // &.blue {
+        //     &:not(.is-expanded):hover {
+        //         .card__inner {
+        //             border-top: 2px solid $color-blue;
+        //         }
+        //     }
+
+        //     .tag {
+        //         color: $color-blue;
+        //     }
+
+        //     border-top: 2px solid $color-blue;
+
+        //     &__inner {
+        //         border-top: 2px solid $color-blue;
+        //     }
+            
+        //     &__expander {
+        //         border-top: none;
+        //     }
+        // }
+
         &:hover {
             .card__inner {
                 background-color: black;
-                border-radius: $round-xs;
+                border-radius: 0 0 $round-xs $round-xs;
+                border-top: 2px solid var(--color);
                 transform: scale(1.05);
             }
         }
@@ -65,18 +154,13 @@
             text-transform: uppercase;
             font-weight: 700;
             font-size: 0.7rem;
-            color: $color-green;
+            color: var(--color);
             margin-bottom: $spacing-xs;
         }
 
-        h5 {
-            font-weight: 300;
-            font-size: 1.5rem;
-        }
-
         .desc {
-            font-size: .9rem;
-            opacity: .5;
+            font-size: 0.9rem;
+            opacity: 0.5;
             margin-top: $spacing-lg;
         }
 
@@ -88,9 +172,10 @@
 
             // background-color: black;
             background-color: black;
-            border-radius: $round-xs;
-            box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+            border-radius: 0 0 $round-xs $round-xs;
+            border-top: 2px solid var(--color);
 
+            box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
 
             transition: all 0.2s ease-in-out;
 
@@ -103,12 +188,15 @@
         &__expander {
             transition: all 0.2s ease-in-out;
             background-color: white;
-            border-radius: $round-xs;
+            border-radius: $round-xs ;
+            // border-top: 2px solid var(--color);
+
             color: $color-text;
             width: 100%;
             position: relative;
 
             display: flex;
+            flex-direction: column;
             // justify-content: center;
             // align-items: center;
             padding: $spacing-xl;
@@ -123,6 +211,44 @@
 
                 &:hover {
                     opacity: 0.9;
+                }
+            }
+
+            .card-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: $spacing-md;
+
+                img {
+                    width: 100%;
+                }
+
+                p {
+                    margin-bottom: $spacing-md;
+                }
+
+                .link-container {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: $spacing-md;
+
+                    img {
+                        width:20px;
+                        height: auto;
+                        margin-right: $spacing-xs;
+                    }
+                    p {
+                        font-weight: 600;
+                        margin-bottom: 0;
+                        font-size: 0.8rem;
+                        text-decoration: underline;
+                    }
+                }
+
+                .note {
+                    font-size: 0.8rem;
+                    font-style: italic;
+                    margin-bottom: $spacing-xl;
                 }
             }
         }
@@ -144,8 +270,12 @@
         }
 
         &.is-expanded {
+            .tag {
+                color: $color-black;
+            }
             .card__inner {
                 background-color: $color-red;
+                border-top: none;
 
                 &:after {
                     content: "";

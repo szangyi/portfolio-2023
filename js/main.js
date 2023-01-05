@@ -70,3 +70,16 @@ $cell.find('.js-collapser').click(function() {
   $cell.not($thisCell).removeClass('is-inactive');
 
 });
+
+
+
+// TRUNCATE PROJECT DESC
+
+// function truncate(str, maxLength) {
+//   if (str.length > maxLength) {
+//     return str.substring(0, maxLength) + '...';
+//   }
+//   return str;
+
+
+// }
