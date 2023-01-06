@@ -1,0 +1,28 @@
+@import "var";
+
+main {
+    .resume-container {
+        width: 100%;
+        padding:  $spacing-xxl $spacing-extra;
+
+        img {
+            width: 100%;
+            height: auto;
+            margin-top: $spacing-lg;
+        }
+    }
+
+    
+    @media (max-width: map-get($breakPoints, lg)) {
+        .resume-container {
+            padding:  $spacing-xxl $spacing-xxxl $spacing-extra;
+        }
+    }
+
+    @media (max-width: map-get($breakPoints, md)) {
+        .resume-container {
+            padding: $spacing-xxl $spacing-md $spacing-extra;
+
+        }
+    }
+}

@@ -7,10 +7,7 @@
     padding: $spacing-extra;
     background-image: url(/assets/chat-bg.png);
     background-repeat: repeat;
-
 }
-
-
 
 .message-indicator {
     display: grid;
@@ -23,14 +20,15 @@
         grid-column: 1;
         grid-row: 1;
         width: 100%;
-
     }
 
     .img-container {
+        transform-origin: center;
+
         grid-column: 1;
         grid-row: 1;
         // put back
-        // transform: scale(0);
+        opacity: 0;
 
         img {
             width: 60px;
@@ -53,8 +51,8 @@
         grid-row: 1;
         align-self: start;
 
-                // put back
-        // transform: scale(0);
+        // put back
+        transform: scale(0);
 
         &.disable {
             animation: 0.3s disable ease-out forwards;
@@ -146,15 +144,29 @@
     text-align: left;
     border-radius: 20px;
 
+    .emoji {
+        display: inline-flex;
+
+        img {
+            height: 20px;
+            width: auto;
+        }
+    }
+
     // put back
-   //  transform: scale(0);
+    transform: scale(0);
+
+    &.media {
+        max-width: 40%;
+        img {
+            width: 100%;
+        }
+    }
 
     .message-content {
         padding: 0;
         margin: 0;
     }
-
-
 
     &:first-of-type:after {
         content: "";
@@ -165,6 +177,27 @@
         border-right: 15px solid transparent;
         // bottom: 0;
     }
+
+    .video-group {
+        max-width: 100%;
+    }
+
+    .video-group__item {
+        img {
+            // max-width: 60%;
+            max-width: 100%;
+
+        }
+    }
+
+    @media (max-width: map-get($breakPoints, lg)) {
+    .video-group__item {
+        img {
+            max-width: 100%;
+        }
+    }
+
+}
 }
 
 @keyframes blink {
@@ -182,31 +215,23 @@
     }
 }
 
-
-
-
-
-
 @media (max-width: map-get($breakPoints, lg)) {
-
     .message-container {
         padding: $spacing-extra $spacing-xxxl $spacing-extra;
-
     }
-
 }
 
-
 @media (max-width: map-get($breakPoints, md)) {
-
     .message-container {
         padding: $spacing-xxl 5rem $spacing-extra;
 
         .message {
             // max-width: 80%;
             max-width: 100%;
+
+            &.media {
+                max-width: 100%;
+            }
         }
-
     }
-
 }

@@ -1,0 +1,25 @@
+@import "var";
+
+
+
+
+
+footer {
+
+    padding: $spacing-lg;
+    background-color: $color-purple;
+
+    .logos-container {
+        display:flex;
+        justify-content: space-around;
+
+        @media (max-width: map-get($breakPoints, md)) {
+            justify-content: space-evenly;
+        }
+
+        img {
+            height: 20px;
+            width: auto;    
+        }
+    }
+}
