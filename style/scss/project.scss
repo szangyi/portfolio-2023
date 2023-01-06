@@ -22,6 +22,12 @@
     background-color: $color-black;
     padding: $spacing-extra $spacing-xxl;
 
+
+    @media (max-width: map-get($breakPoints, md)) {
+        padding: $spacing-xxxl $spacing-md;
+
+    }
+
     h1 {
         color: $color-white;
         text-align: center;

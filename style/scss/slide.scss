@@ -1,8 +1,8 @@
 @import "var";
 
 section.slide-option {
-    background-color: white; 
-    
+    background-color: white;
+
     // margin: 0 0 50px 0;
     .no-marg {
         margin: 0 0 0 0;
@@ -112,11 +112,11 @@ section.slide-option {
 
                 .fa-tailwind {
                     height: 50%;
-                    width: auto;
+                    // width: auto;
+                    width: 100%;
                     img {
-height: 100%;
+                        height: 100%;
                     }
-                 
                 }
             }
         }

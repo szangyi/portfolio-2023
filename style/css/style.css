@@ -597,6 +597,11 @@ button.video-open, button.video-close {
   background-color: #111111;
   padding: 10rem 3rem;
 }
+@media (max-width: 550px) {
+  .project-container {
+    padding: 6rem 1rem;
+  }
+}
 .project-container h1 {
   color: #FFFFFF;
   text-align: center;
@@ -926,7 +931,7 @@ section.slide-option #infinite div.highway-barrier ul.highway-lane li.highway-ca
 }
 section.slide-option #infinite div.highway-barrier ul.highway-lane li.highway-car .fa-tailwind {
   height: 50%;
-  width: auto;
+  width: 100%;
 }
 section.slide-option #infinite div.highway-barrier ul.highway-lane li.highway-car .fa-tailwind img {
   height: 100%;
